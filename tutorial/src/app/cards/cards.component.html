@@ -1,0 +1,28 @@
+<main>
+    <div class="d-flex align-items-center">
+        <div class="flex-grow-1">
+            <h1 class="page-title"> Cards </h1>
+            <p class="page-description">
+                Alaska evin en büyük kedisi!
+            </p>
+        </div>
+        <button mat-flat-button class="button" (click)="openAddCardModal()">Add Cat</button>
+    </div>
+    <hr>
+    <div class="cards">
+        <div class="row">
+            <div class="col-12" *ngIf="!cardService.cards">
+                <span>Kartvizitler yükleniyor..</span>
+            </div>
+            <div class="col-12" *ngIf="cardService.cards?.length===0">
+                <span>Henüz kartvizit eklemediniz.
+                    <a class="text-primary" (click)="openAddCardModal()">Buraya tıklayarak </a>ilk kartvizitinizi ekleyebilirsiniz.
+                </span>
+            </div>
+            <div class="col-12 col-lg-3" *ngFor="let card of cardService.cards">
+                <app-card-item [card]="card"></app-card-item>
+            </div>
+
+        </div>
+    </div>
+</main>

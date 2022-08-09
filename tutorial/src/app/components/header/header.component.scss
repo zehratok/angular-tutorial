@@ -1,0 +1,36 @@
+$dark: #553ba6;
+$light: #f7e1d8;
+$yellow: #eebd59;
+$lilac: #d7aefe;
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.header {
+    background-color: $dark;
+    color: $yellow;
+}
+
+.header-menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        a {
+            color: $light;
+            padding: 0 10px;
+            text-decoration: none;
+            font-size: 15px;
+            opacity: 0.7;
+            &:hover,
+            &.active {
+                color: $yellow;
+                opacity: 1;
+            }
+        }
+    }
+
+}
